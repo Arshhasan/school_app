@@ -52,7 +52,6 @@ class _TransportPageState extends State<TransportPage> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white,),
         backgroundColor: const Color(0xFF213069),
       ),
       body: Padding(

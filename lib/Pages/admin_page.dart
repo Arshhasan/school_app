@@ -113,6 +113,13 @@ class AdminPage extends StatelessWidget {
                 },
               ),
             ),
+
+             IconButton(
+              icon: const Icon(Icons.logout),
+              onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
+              },
+            ),
           ],
         ),
       ),

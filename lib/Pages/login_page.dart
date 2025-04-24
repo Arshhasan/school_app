@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 // Import your pages
-import '../Pages/home_page.dart'; // Replace with actual path to MyHomePage
-import '../Pages/admin_page.dart'; // Replace with actual path to AdminPage
+// import '../Pages/home_page.dart'; // Replace with actual path to MyHomePage
+// import '../Pages/admin_page.dart'; // Replace with actual path to AdminPage
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -25,12 +25,14 @@ class _LoginPageState extends State<LoginPage> {
     var userDoc = await firestore.collection('users').doc(userId).get();
     if (userDoc.exists) {
       if (userDoc['password'].toString().trim() == password) {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (_) => MyHomePage(title: "Welcome $userId"),
-          ),
-        );
+        // Navigator.pushReplacement(
+        //   context,
+        //   MaterialPageRoute(
+        //     builder: (_) => MyHomePage(title: "Welcome $userId"),
+        //   ),
+        // );
+        Navigator.pushReplacementNamed(context, '/home', arguments: userId);
+
         return;
       }
     }
@@ -38,10 +40,12 @@ class _LoginPageState extends State<LoginPage> {
     // Check for admin login
     var adminDoc = await firestore.collection('admins').doc(userId).get();
     if (adminDoc.exists && adminDoc['password'].toString().trim() == password) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const AdminPage()),
-      );
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(builder: (_) => const AdminPage()),
+      // );
+      Navigator.pushReplacementNamed(context, '/admin');
+
       return;
     }
 

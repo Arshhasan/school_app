@@ -12,7 +12,11 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   table_calendar: ^3.2.0
-  flutter_native_splash: ^2.3.9  # Keep this inside dependencies
+  firebase_core: ^2.30.0
+  firebase_auth: ^4.17.4
+  cloud_firestore: ^4.16.1
+  firebase_auth_web: ^5.8.14
+  flutter_native_splash: ^2.3.9
 
 dev_dependencies:
   flutter_test:
@@ -26,11 +30,11 @@ flutter:
     - assets/spash_img.jpg  # Ensure this file exists
 
 # 🚀 Native Splash Screen Configuration (Placed at the root level, NOT inside `flutter:`)
-flutter_native_splash:
-  image: assets/spash_img.jpg  # Path to your custom splash image
-  color: "#ffffff"                # Background color
-  android: true
-  ios: true
+# flutter_native_splash:
+#   image: assets/spash_img.jpg  # Path to your custom splash image
+#   color: "#ffffff"                # Background color
+#   android: true
+#   ios: true
 
 flutter_icons:
   android: true
